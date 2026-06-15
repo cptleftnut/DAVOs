@@ -29,7 +29,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Sync Capacitor
-      run: npx @capacitor/cli sync android || (echo "Sync failed, dumping logs:" && cat /home/runner/.npm/_logs/* && false)
+      run: npx cap sync android
 
     - name: Ensure gradlew is executable
       working-directory: ./android
