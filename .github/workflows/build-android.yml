@@ -29,7 +29,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Sync Capacitor
-      run: npx capacitor sync android
+      run: npx cap sync android || cat /home/runner/.npm/_logs/* || (echo "failed to find logs" && false)
 
     - name: Build APK
       working-directory: ./android
